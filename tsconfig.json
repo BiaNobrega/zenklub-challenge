@@ -10,7 +10,8 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
-      "@config/*": ["./src/config/*"]
+      "@config/*": ["./src/config/*"],
+      "@professional/*": ["./src/professional/*"]
     }
   },
   "exclude": ["node_modules"]
