@@ -1,3 +1,4 @@
+// tslint:disable-next-line: no-var-requires
 require('module-alias/register');
 import { ConfigService } from '@config/config.service';
 import { EnvConfig } from '@config/enums/config.enum';
@@ -8,6 +9,7 @@ import {
   NestFastifyApplication
 } from '@nestjs/platform-fastify';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { AllExceptionsFilter } from '@shared/filters/error.filter';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
@@ -17,6 +19,7 @@ async function bootstrap() {
     new FastifyAdapter()
   );
   app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalFilters(new AllExceptionsFilter());
 
   const configService: ConfigService = app.get(ConfigService);
   const port = configService.getEnvConfig(EnvConfig.Port);
@@ -42,7 +45,7 @@ const createSwaggerBaseConfig = (host: string, version: string) =>
     .setDescription('')
     .setVersion(version)
     .addTag('professionals')
-    .setHost('localhost:9000')
+    .setHost(host)
     .build();
 
 const createSwaggerDocument = (

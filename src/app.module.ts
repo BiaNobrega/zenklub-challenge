@@ -1,7 +1,9 @@
+import { AvailabilityModule } from '@availability/availability.module';
+import { BookingModule } from '@booking/booking.module';
 import { ConfigModule } from '@config/config.module';
 import { Module } from '@nestjs/common';
-import { ProfessionalModule } from '@professional/professional.module';
+import { SlotModule } from './slot/slot.module';
 @Module({
-  imports: [ConfigModule, ProfessionalModule]
+  imports: [ConfigModule, AvailabilityModule, BookingModule, SlotModule]
 })
-export class AppModule { }
+export class AppModule {}

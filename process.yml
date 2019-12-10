@@ -1,0 +1,7 @@
+apps:
+  - script   : 'dist/main.js'
+    name     : 'zenklub-challenge'
+    exec_mode: 'cluster'
+    instances: 1
+    env      :
+      NODE_ENV: qual

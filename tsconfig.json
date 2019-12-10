@@ -10,8 +10,11 @@
     "baseUrl": "./",
     "incremental": true,
     "paths": {
+      "@booking/*": ["./src/booking/*"],
       "@config/*": ["./src/config/*"],
-      "@professional/*": ["./src/professional/*"]
+      "@availability/*": ["./src/availability/*"],
+      "@shared/*": ["./src/shared/*"],
+      "@slot/*": ["./src/slot/*"]
     }
   },
   "exclude": ["node_modules"]

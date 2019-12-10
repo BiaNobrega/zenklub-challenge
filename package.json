@@ -2,12 +2,15 @@
   "name": "zenklub-challenge",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "engines": {
+    "node": "12.13.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rm -rf ./dist && tsc --p ./tsconfig.build.json && npm run cp-config",
     "cp-config": "mkdir -p dist/config/env && cp src/config/env/.env.\"$NODE_ENV\" dist/config/env",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "start": "node dist/main.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +25,7 @@
   "dependencies": {
     "@nestjs/common": "^6.10.2",
     "@nestjs/core": "^6.10.2",
+    "@nestjs/mongoose": "^6.1.2",
     "@nestjs/platform-fastify": "^6.10.2",
     "@nestjs/swagger": "^3.1.0",
     "class-transformer": "^0.2.3",
@@ -29,17 +33,23 @@
     "dotenv": "^8.2.0",
     "fastify-swagger": "^2.4.0",
     "module-alias": "^2.2.2",
+    "mongoose": "^5.7.13",
     "reflect-metadata": "^0.1.13",
-    "rxjs": "^6.5.3"
+    "rxjs": "6.3.3",
+    "rxjs-compat": "6.3.3"
   },
   "devDependencies": {
     "@types/module-alias": "^2.0.0",
+    "@types/mongoose": "^5.5.32",
     "@types/node": "^12.12.14",
     "tslint": "^5.20.1",
     "typescript": "^3.7.2"
   },
   "_moduleAliases": {
+    "@booking": "dist/booking",
     "@config": "dist/config",
-    "@professional": "dist/professional"
+    "@availability": "dist/availability",
+    "@shared": "dist/shared",
+    "@slot": "dist/slot"
   }
 }

@@ -1,0 +1,21 @@
+version: "3"
+services:
+  zenklub-challenge:
+    container_name: zenklub-challenge
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "1010:1010"
+    links:
+      - mongo
+    
+  mongo:
+    container_name: mongo
+    restart: always
+    image: aashreys/mongo-auth:latest
+    ports:
+      - "27017:27017"
+    environment:
+      - AUTH=no
