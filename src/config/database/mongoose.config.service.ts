@@ -11,7 +11,9 @@ export class MongooseConfigService implements MongooseOptionsFactory {
   constructor(private readonly configService: ConfigService) {}
   createMongooseOptions(): MongooseModuleOptions {
     return {
-      uri: this.configService.getEnvConfig(EnvConfig.MongoUri),
+      uri: this.configService
+        .getEnvConfig(EnvConfig.MongoUri)
+        .replace('$password', process.env.MONGO_PASSWORD),
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true
