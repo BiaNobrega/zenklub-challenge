@@ -22,7 +22,7 @@ async function bootstrap() {
   app.useGlobalFilters(new AllExceptionsFilter());
 
   const configService: ConfigService = app.get(ConfigService);
-  const port = configService.getEnvConfig(EnvConfig.Port);
+  const port = process.env.PORT || configService.getEnvConfig(EnvConfig.Port);
   const host = configService.getEnvConfig(EnvConfig.Host);
 
   SwaggerModule.setup(
