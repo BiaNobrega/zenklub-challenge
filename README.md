@@ -1,5 +1,6 @@
 # Zenklub Challenge
 Rest Service with Node.js, TypeScript, Nestjs and Mongoose.
+`https://bnobrega-zenklub-challenge.herokuapp.com/v1/professionals/docs`
 
 ## Endpoints
 | Method | URL                                                           | Description                                 |
@@ -33,13 +34,14 @@ export NODE_ENV=dev
 npm run build && npm start
 ```
 
-**Swagger:** `http://localhost:9000/v1/professionals/docs/static/index.html`
+***Swagger:*** `http://localhost:9000/v1/professionals/docs/static/index.html`
 
 #### Requests Examples
 ##### Create Availability
 
 **Params:**
 ProfessioanId: *5deaea44e1ffca9d98281d26*
+&nbsp;
 **Body:**
 
 ```json
@@ -124,6 +126,8 @@ ProfessioanId: *5deaea44e1ffca9d98281d26*
 
 **Params:**
 ProfessioanId: *5deaea44e1ffca9d98281d26*
+
+&nbsp;
 **Body:**
 
 ```json
@@ -132,6 +136,16 @@ ProfessioanId: *5deaea44e1ffca9d98281d26*
   "finish": "2019-12-14T11:00:00Z"
 }
 ```
+
+##### Get Slots
+
+**Params:**
+ProfessioanId: *5deaea44e1ffca9d98281d26*
+
+&nbsp;
+**Query:**
+start: *2019-12-14*
+finish: *2019-12-14*
 
 ## Built With
 
