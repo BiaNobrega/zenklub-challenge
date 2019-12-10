@@ -25,10 +25,14 @@ async function bootstrap() {
   const port = process.env.PORT || configService.getEnvConfig(EnvConfig.Port);
   const host = process.env.HOST || configService.getEnvConfig(EnvConfig.Host);
 
+  const swaggerHost = configService
+    .getEnvConfig(EnvConfig.Host)
+    .concat(process.env.NODE_ENV === 'prod' ? '' : `:${port}`);
+
   SwaggerModule.setup(
     `v1/professionals/docs`,
     app,
-    createSwaggerDocument(app, `${configService.getEnvConfig(EnvConfig.Host)}:${port}`, '1.0')
+    createSwaggerDocument(app, swaggerHost, '1.0')
   );
 
   app.enableCors();
