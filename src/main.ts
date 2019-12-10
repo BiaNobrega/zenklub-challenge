@@ -23,7 +23,7 @@ async function bootstrap() {
 
   const configService: ConfigService = app.get(ConfigService);
   const port = process.env.PORT || configService.getEnvConfig(EnvConfig.Port);
-  const host = configService.getEnvConfig(EnvConfig.Host);
+  const host = process.env.HOST || configService.getEnvConfig(EnvConfig.Host);
 
   SwaggerModule.setup(
     `v1/professionals/docs`,
