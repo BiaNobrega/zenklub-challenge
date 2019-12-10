@@ -28,7 +28,7 @@ async function bootstrap() {
   SwaggerModule.setup(
     `v1/professionals/docs`,
     app,
-    createSwaggerDocument(app, `${host}:${port}`, '1.0')
+    createSwaggerDocument(app, `${configService.getEnvConfig(EnvConfig.Host)}:${port}`, '1.0')
   );
 
   app.enableCors();
