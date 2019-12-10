@@ -33,7 +33,7 @@ async function bootstrap() {
 
   app.enableCors();
 
-  await app.listen(port);
+  await app.listen(port, host);
   logger.log(
     `App is running at http://${host}:${port} in ${process.env.NODE_ENV} mode`
   );
