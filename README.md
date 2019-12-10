@@ -1,6 +1,7 @@
 # Zenklub Challenge
 Rest Service with Node.js, TypeScript, Nestjs and Mongoose.
-`https://bnobrega-zenklub-challenge.herokuapp.com/v1/professionals/docs`
+
+https://bnobrega-zenklub-challenge.herokuapp.com/v1/professionals/docs
 
 ## Endpoints
 | Method | URL                                                           | Description                                 |
