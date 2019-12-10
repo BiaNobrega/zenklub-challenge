@@ -49,6 +49,7 @@ const createSwaggerBaseConfig = (host: string, version: string) =>
     .setDescription('')
     .setVersion(version)
     .addTag('professionals')
+    .setSchemes(process.env.NODE_ENV === 'prod' ? 'https' : 'http')
     .setHost(host)
     .build();
 
